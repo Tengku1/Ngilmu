@@ -1,5 +1,17 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+import './assets/css/bootstrap.css'
+import './assets/css/bootstrap-extended.css'
+import './assets/css/colors.css'
+import './assets/css/components.css'
+import './assets/css/themes/dark-layout.css'
+import './assets/css/themes/bordered-layout.css'
+import './assets/css/core/menu/menu-types/vertical-menu.css'
+import './assets/css/pages/app-ecommerce.css'
+import './assets/css/plugins/forms/pickers/form-pickadate.css'
+import './assets/css/plugins/forms/form-wizard.css'
+import './assets/css/plugins/extensions/ext-component-toastr.css'
+import './assets/css/plugins/forms/form-number-input.css'
 
-createApp(App).use(router).mount("#app");
+createApp(App).use(router).mount('#app')
