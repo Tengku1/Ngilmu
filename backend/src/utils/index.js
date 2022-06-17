@@ -1,5 +1,9 @@
-const callHandler = require('./callHandler');
+const create_handler = require('./create_handler');
+const error_handler = require('./error_handler');
+const validateSchema = require('./validateSchema');
 
 module.exports = {
-    callHandler
+    error_handler,
+    create_handler,
+    validateSchema
 }
