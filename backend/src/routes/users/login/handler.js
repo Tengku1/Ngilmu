@@ -1,7 +1,7 @@
 const {
     users
-} = require('../../models');
-const { callHandler } = require('../../utils');
+} = require('../../../models');
+const { error_handler } = require('../../../utils');
 const jwt = require('jsonwebtoken');
 
 module.exports = async (req, res) => {
@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
     });
 
     if (!user) {
-        throw new callHandler(400, "Data tidak ditemukan");
+        throw new error_handler(400, "Data tidak ditemukan");
     }
 
     const token = jwt.sign({
