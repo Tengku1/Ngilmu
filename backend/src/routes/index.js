@@ -1,5 +1,11 @@
-const login = require('./login');
+const users = require('./users');
+const courses = require('./courses');
+const subscribes = require('./subscribes');
+const teachers = require('./teachers');
 
 module.exports = [
-    login
+    users,
+    // courses,
+    // subscribes,
+    // teachers
 ]
