@@ -3,6 +3,7 @@ import DashboardGuru from '../views/guru/Dashboard.vue'
 import CourseGuru from '../views/guru/Course.vue'
 import TambahCourseGuru from '../views/guru/TambahCourse.vue'
 import AmbilCourse from '../views/murid/AmbilCourse.vue'
+import LoginGuru from '../views/guru/Login.vue'
 
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     path: '/murid/ambilcourse',
     name: 'ambilcourse',
     component: AmbilCourse
+  },
+  {
+    path: '/guru/login',
+    name: 'loginguru',
+    component: LoginGuru
   },
 
 ]
