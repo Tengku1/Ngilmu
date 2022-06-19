@@ -22,14 +22,14 @@
                         <tr>
                           <th>#</th>
                           <th>Course</th>
-                          <th>Tanggal Dibuat</th>
+                          <th>Biaya (per 1 jam)</th>
                           <th>Status</th>
                           <th>Edit</th>
                         </tr>
                         <tr>
                           <td>1</td>
                           <td>Bahasa Jepang</td>
-                          <td>2017-01-09</td>
+                          <td>Rp. 10000</td>
                           <td><div class="badge badge-success">Active</div></td>
                           <td>
                             <a href="#" class="btn btn-secondary">Detail</a>
@@ -38,7 +38,7 @@
                         <tr>
                           <td>2</td>
                           <td>Piano</td>
-                          <td>2017-01-11</td>
+                          <td>Rp. 10000</td>
                           <td>
                             <div class="badge badge-danger">Not Active</div>
                           </td>
