@@ -9,22 +9,17 @@
         <a href="index.html">Ngilmu</a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html"></a>
+        <a href="index.html">St</a>
       </div>
       <ul class="sidebar-menu">
         <li>
           <a class="nav-link" href="blank.html"
-            ><i class="far fa-square"></i> <span>Dashboard</span></a
+            ><i class="far fa-square"></i> <span>Ambil Course</span></a
           >
         </li>
         <li>
           <a class="nav-link" href="blank.html"
-            ><i class="far fa-square"></i> <span>Course</span></a
-          >
-        </li>
-        <li>
-          <a class="nav-link" href="blank.html"
-            ><i class="far fa-square"></i> <span>Histori</span></a
+            ><i class="far fa-square"></i> <span>Coursemu</span></a
           >
         </li>
       </ul>

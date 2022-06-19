@@ -24,15 +24,15 @@
                           <th>Course</th>
                           <th>Biaya (per 1 jam)</th>
                           <th>Status</th>
-                          <th>Edit</th>
+                          <th></th>
                         </tr>
                         <tr>
                           <td>1</td>
                           <td>Bahasa Jepang</td>
                           <td>Rp. 10000</td>
-                          <td><div class="badge badge-success">Active</div></td>
+                          <td><div class="badge badge-success">Aktif</div></td>
                           <td>
-                            <a href="#" class="btn btn-secondary">Detail</a>
+                            <a href="#" class="btn btn-primary">Edit</a>
                           </td>
                         </tr>
                         <tr>
@@ -40,10 +40,10 @@
                           <td>Piano</td>
                           <td>Rp. 10000</td>
                           <td>
-                            <div class="badge badge-danger">Not Active</div>
+                            <div class="badge badge-danger">Tidak Aktif</div>
                           </td>
                           <td>
-                            <a href="#" class="btn btn-secondary">Detail</a>
+                            <a href="#" class="btn btn-primary">Edit</a>
                           </td>
                         </tr>
                       </tbody>

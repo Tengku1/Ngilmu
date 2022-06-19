@@ -31,6 +31,13 @@
                     <label>Link url gambar course</label>
                     <input type="text" class="form-control" />
                   </div>
+                  <div class="form-group">
+                    <label>Status</label>
+                    <select class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                      <option>Aktif</option>
+                      <option>Tidak Aktif</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
