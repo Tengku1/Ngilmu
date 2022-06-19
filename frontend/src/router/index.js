@@ -1,11 +1,17 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import DashboardGuru from '../views/guru/Dashboard.vue'
+import CourseGuru from '../views/guru/Course.vue'
 
 const routes = [
   {
-    path: '/dashboardguru',
+    path: '/guru/dashboard',
     name: 'dashboardguru',
     component: DashboardGuru
+  },
+  {
+    path: '/guru/course',
+    name: 'courseguru',
+    component: CourseGuru
   },
 ]
 
