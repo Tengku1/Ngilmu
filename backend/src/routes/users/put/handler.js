@@ -1,26 +1,29 @@
 const {
+    sequelize,
     users
 } = require('../../../models');
 const { error_handler } = require('../../../utils/index');
 
 module.exports = async (req, res) => {
     const {
-        username
+        id
     } = req.body;
     const data = await users.findOne({
         where: {
-            username
+            id
         }
     });
     if (!data) {
-        throw new error_handler(400, "Data Duplikat !");
+        throw new error_handler(400, "Data Tidak Ditemukan");
     }
 
-    const user = await users.create({
+    const user = await users.update({
         ...req.body
+    }, {
+        where: {
+            id
+        }
     });
 
-    return res.send({
-        user
-    });
+    return res.send(user);
 }
