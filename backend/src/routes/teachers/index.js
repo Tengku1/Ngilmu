@@ -1,10 +1,10 @@
-const get = require('./get');
+const getAll = require('./getAll');
 const post = require('./post');
 const put = require('./put');
 const destroy = require('./destroy');
 
 module.exports = [
-    get,
+    getAll,
     post,
     put,
     destroy
