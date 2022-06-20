@@ -1,20 +1,38 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import DashboardGuru from '../views/guru/Dashboard.vue'
+import CourseGuru from '../views/guru/Course.vue'
+import TambahCourseGuru from '../views/guru/TambahCourse.vue'
+import AmbilCourse from '../views/murid/AmbilCourse.vue'
+import LoginGuru from '../views/guru/Login.vue'
+
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/guru/dashboard',
+    name: 'dashboardguru',
+    component: DashboardGuru
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/guru/course',
+    name: 'courseguru',
+    component: CourseGuru
+  },
+  {
+    path: '/guru/tambahcourse',
+    name: 'tambahcourseguru',
+    component: TambahCourseGuru
+  },
+  {
+    path: '/murid/ambilcourse',
+    name: 'ambilcourse',
+    component: AmbilCourse
+  },
+  {
+    path: '/guru/login',
+    name: 'loginguru',
+    component: LoginGuru
+  },
+
 ]
 
 const router = createRouter({
