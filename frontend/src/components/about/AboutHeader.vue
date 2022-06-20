@@ -42,8 +42,6 @@ export default {
 </script>
 
 <style scoped>
-.wrapper {
-}
 header {
   padding: 2rem;
   padding-bottom: 1rem;
