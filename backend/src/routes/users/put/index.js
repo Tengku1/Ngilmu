@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const handler = require('./handler');
 const { create_handler, validateSchema } = require('../../../utils');
-const teacherSchema = require('../../../schema/teacherSchema');
+const userSchema = require('../../../schema/userSchema');
 
-router.delete('/api/teacher/:id',
-    validateSchema({ params: teacherSchema.destroy }),
+router.put('/api/users',
+    validateSchema({ body: userSchema.put }),
     create_handler(handler)
 );
 

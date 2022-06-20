@@ -7,5 +7,5 @@ module.exports = [
     users,
     // courses,
     // subscribes,
-    // teachers
+    teachers
 ]
