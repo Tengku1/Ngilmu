@@ -28,10 +28,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.ENUM('Wanita', 'Pria'),
             allowNull: false
         },
-        price: {
-            type: DataTypes.BIGINT,
-            allowNull: false
-        },
         courses: {
             type: DataTypes.STRING,
             allowNull: false
