@@ -6,7 +6,6 @@ const post = Joi.object({
     education: Joi.string().required(),
     age: Joi.number().required(),
     gender: Joi.string().required(),
-    price: Joi.number().required(),
     courses: Joi.string().required()
 }).options({
     abortEarly: false
@@ -19,7 +18,6 @@ const put = Joi.object({
     education: Joi.string(),
     age: Joi.number(),
     gender: Joi.string(),
-    price: Joi.number(),
     courses: Joi.string()
 }).options({
     abortEarly: false
