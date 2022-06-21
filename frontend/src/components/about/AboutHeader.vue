@@ -10,7 +10,9 @@
         <li><button>Products</button></li>
       </ul>
       <nav>
-        <router-link class="login__link" to="/login">Login</router-link>
+        <router-link class="login__link" to="/guru/dashboard"
+          >Login</router-link
+        >
         <button class="hamburger" @click="toggleBurger">=</button>
       </nav>
     </header>
