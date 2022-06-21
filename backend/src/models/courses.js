@@ -16,8 +16,12 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.ENUM('akademik', 'non-akademik'),
             allowNull: false
         },
-        difficulty: {
-            type: DataTypes.ENUM('beginner', 'intermediate', 'advanced'),
+        status: {
+            type: DataTypes.ENUM('Active', 'Deactivate'),
+            allowNull: false
+        },
+        price: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         created_at: {

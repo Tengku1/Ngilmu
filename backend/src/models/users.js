@@ -20,10 +20,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        roles: {
-            type: DataTypes.ENUM('master', 'admin', 'customer'),
-            allowNull: false
-        },
         created_at: {
             type: DataTypes.DATE,
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
