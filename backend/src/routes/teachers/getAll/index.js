@@ -3,7 +3,7 @@ const router = express.Router();
 const handler = require('./handler');
 const { create_handler } = require('../../../utils');
 
-router.get('/api/courses',
+router.get('/api/teacher',
     create_handler(handler)
 );
 

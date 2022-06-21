@@ -5,7 +5,7 @@ const teachers = require('./teachers');
 
 module.exports = [
     users,
-    // courses,
-    // subscribes,
-    // teachers
+    courses,
+    subscribes,
+    teachers
 ]

@@ -1,30 +1,29 @@
-const { subscribes } = require('../../../models');
+const {
+    sequelize,
+    users
+} = require('../../../models');
 const { error_handler } = require('../../../utils/index');
 
 module.exports = async (req, res) => {
     const {
         id
-    } = req.params;
-
-    const data = await subscribes.findOne({
+    } = req.body;
+    const data = await users.findOne({
         where: {
             id
         }
     });
-
     if (!data) {
         throw new error_handler(400, "Data Tidak Ditemukan");
     }
 
-    const subscribe = await subscribes.destroy({
+    const user = await users.update({
+        ...req.body
+    }, {
         where: {
             id
         }
     });
 
-    if (!subscribe) {
-        throw new error_handler(400, "Data Gagal Dihapus");
-    }
-
-    res.send(data);
+    return res.send(user);
 }
