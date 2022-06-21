@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="item">
-      <img src="../../../public/misc/1.png" alt="" />
+      <img src="../../../src/assets/img/misc/1.png" alt="" />
     </div>
     <div class="item desc__container">
       <p>
@@ -27,7 +27,7 @@ section {
 }
 
 .item {
-  flex: 1;
+  flex: 1 1 328px;
   text-align: center;
 }
 
@@ -35,10 +35,25 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
 }
 
 .desc__container p {
-  padding: 0 24px 0 0;
+  margin-bottom: 0;
   font-size: large;
+}
+
+@media screen and (max-width: 450px) {
+  .item img {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .item img {
+    width: 400px;
+    height: 500px;
+  }
 }
 </style>
