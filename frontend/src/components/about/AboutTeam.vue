@@ -3,19 +3,19 @@
     <h2>Team of Ngilmu</h2>
     <div class="team__img__container">
       <figure>
-        <img src="../../../public/misc/avatar-1.png" alt="" />
+        <img src="../../../src/assets/img/misc/avatar-1.png" alt="" />
         <figcaption>John Doe</figcaption>
       </figure>
       <figure>
-        <img src="../../../public/misc/avatar-1.png" alt="" />
+        <img src="../../../src/assets/img/misc/avatar-1.png" alt="" />
         <figcaption>John Doe</figcaption>
       </figure>
       <figure>
-        <img src="../../../public/misc/avatar-1.png" alt="" />
+        <img src="../../../src/assets/img/misc/avatar-1.png" alt="" />
         <figcaption>John Doe</figcaption>
       </figure>
       <figure>
-        <img src="../../../public/misc/avatar-1.png" alt="" />
+        <img src="../../../src/assets/img/misc/avatar-1.png" alt="" />
         <figcaption>John Doe</figcaption>
       </figure>
     </div>
