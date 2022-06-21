@@ -65,7 +65,7 @@
 
 <script>
 export default {
-  name: "LoginGuru",
+  name: "LoginMurid",
 
 }
 </script>

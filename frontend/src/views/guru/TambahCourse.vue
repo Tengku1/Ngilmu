@@ -54,7 +54,7 @@ import Navbar from "@/components/guru/Navbar.vue";
 import Sidebar from "@/components/guru/Sidebar.vue";
 
 export default {
-  name: "CourseGuru",
+  name: "TambahCourseGuru",
   components: {
     Navbar,
     Sidebar,

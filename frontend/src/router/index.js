@@ -4,6 +4,10 @@ import CourseGuru from '../views/guru/Course.vue'
 import TambahCourseGuru from '../views/guru/TambahCourse.vue'
 import AmbilCourse from '../views/murid/AmbilCourse.vue'
 import LoginGuru from '../views/guru/Login.vue'
+import RegisterGuru from '../views/guru/Register.vue'
+import LoginMurid from '../views/murid/Login.vue'
+import RegisterMurid from '../views/murid/Register.vue'
+
 
 
 const routes = [
@@ -31,6 +35,21 @@ const routes = [
     path: '/guru/login',
     name: 'loginguru',
     component: LoginGuru
+  },
+  {
+    path: '/guru/register',
+    name: 'registerguru',
+    component: RegisterGuru
+  },
+  {
+    path: '/murid/login',
+    name: 'loginmurid',
+    component: LoginMurid
+  },
+  {
+    path: '/murid/register',
+    name: 'registermurid',
+    component: RegisterMurid
   },
 
 ]
