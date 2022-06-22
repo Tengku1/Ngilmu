@@ -1,5 +1,5 @@
 <template>
-  <about-header></about-header>
+  <the-header></the-header>
   <about-jumbotron></about-jumbotron>
   <main>
     <about-team></about-team>
@@ -10,16 +10,14 @@
 <style scoped></style>
 
 <script>
-import AboutHeader from '../../components/about/AboutHeader.vue';
+import TheHeader from '@/components/TheHeader.vue';
 import AboutJumbotron from '@/components/about/AboutJumbotron.vue';
-import AboutDescription from '@/components/about/AboutDescription.vue';
 import AboutTeam from '@/components/about/AboutTeam.vue';
 import AboutFooter from '@/components/about/AboutFooter.vue';
 export default {
   components: {
-    AboutHeader,
+    TheHeader,
     AboutJumbotron,
-    AboutDescription,
     AboutTeam,
     AboutFooter,
   },
