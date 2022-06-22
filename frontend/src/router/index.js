@@ -8,10 +8,16 @@ import RegisterGuru from '../views/guru/Register.vue';
 import LoginMurid from '../views/murid/Login.vue';
 import RegisterMurid from '../views/murid/Register.vue';
 import AboutPage from '../views/misc/AboutPage.vue';
+import HomePage from '../views/misc/HomePage.vue';
 
 const routes = [
   {
     path: '/',
+    name: 'HomePage',
+    component: HomePage,
+  },
+  {
+    path: '/about',
     name: 'AboutPage',
     component: AboutPage,
   },
