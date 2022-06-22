@@ -4,7 +4,7 @@
   <main>
     <about-team></about-team>
   </main>
-  <about-footer></about-footer>
+  <the-footer></the-footer>
 </template>
 
 <style scoped></style>
@@ -13,13 +13,13 @@
 import TheHeader from '@/components/TheHeader.vue';
 import AboutJumbotron from '@/components/about/AboutJumbotron.vue';
 import AboutTeam from '@/components/about/AboutTeam.vue';
-import AboutFooter from '@/components/about/AboutFooter.vue';
+import TheFooter from '@/components/TheFooter.vue';
 export default {
   components: {
     TheHeader,
     AboutJumbotron,
     AboutTeam,
-    AboutFooter,
+    TheFooter,
   },
 };
 </script>
