@@ -1,8 +1,26 @@
 <template>
-  <footer>
+  <footer :class="classObject">
     <a href="https://github.com/Tengku1/Ngilmu">Project Github Link</a>
   </footer>
 </template>
+
+<script>
+export default {
+  props: {
+    type: {
+      required: false,
+      default: 'normal',
+    },
+  },
+  computed: {
+    classObject() {
+      return {
+        light: this.type === 'light',
+      };
+    },
+  },
+};
+</script>
 
 <style scoped>
 footer {
@@ -13,11 +31,20 @@ footer {
   min-height: 50px;
   background-color: rgb(110, 17, 110);
 }
+
+footer.light {
+  background-color: #ded8fa;
+}
+
 footer a {
   font-size: large;
   text-decoration: none;
   color: white;
   font-weight: bold;
+}
+
+footer.light a {
+  color: #6c757d;
 }
 
 footer a:hover {
