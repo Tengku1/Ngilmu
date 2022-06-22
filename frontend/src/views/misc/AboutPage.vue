@@ -7,8 +7,6 @@
   <the-footer></the-footer>
 </template>
 
-<style scoped></style>
-
 <script>
 import TheHeader from '@/components/TheHeader.vue';
 import AboutJumbotron from '@/components/about/AboutJumbotron.vue';
