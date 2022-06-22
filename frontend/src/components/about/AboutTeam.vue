@@ -5,18 +5,22 @@
       <figure>
         <img src="../../../src/assets/img/misc/avatar-1.png" alt="" />
         <figcaption>John Doe</figcaption>
+        <p>Front End Developer</p>
       </figure>
       <figure>
         <img src="../../../src/assets/img/misc/avatar-1.png" alt="" />
         <figcaption>John Doe</figcaption>
+        <p>Front End Developer</p>
       </figure>
       <figure>
         <img src="../../../src/assets/img/misc/avatar-1.png" alt="" />
         <figcaption>John Doe</figcaption>
+        <p>Back End Developer</p>
       </figure>
       <figure>
         <img src="../../../src/assets/img/misc/avatar-1.png" alt="" />
         <figcaption>John Doe</figcaption>
+        <p>Back End Developer</p>
       </figure>
     </div>
   </section>
@@ -26,7 +30,13 @@
 section {
   background-color: #f0f4fd;
   padding-top: 1rem;
+  min-height: 435px;
 }
+
+figure {
+  text-align: center;
+}
+
 figure img {
   width: 300px;
   height: 300px;
@@ -34,7 +44,6 @@ figure img {
 }
 
 figure figcaption {
-  text-align: center;
   font-size: large;
   font-weight: bold;
   color: black;
@@ -45,6 +54,7 @@ figure figcaption {
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px 60px;
+  margin-top: 3rem;
 }
 
 h2 {
