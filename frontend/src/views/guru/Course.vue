@@ -13,37 +13,53 @@
               <div class="card">
                 <div class="card-header">
                   <h4>Tabel Course</h4>
-                  <a href="#" class="btn btn-primary">Tambah</a>
+                  <router-link class="btn btn-info" to="/guru/tambahcourse"
+                    >Tambah Course</router-link
+                  >
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-bordered table-md">
                       <tbody>
                         <tr>
-                          <th>#</th>
+                          <th>ID</th>
                           <th>Course</th>
-                          <th>Biaya (per 1 jam)</th>
+                          <th>Tipe</th>
+                          <th>Tingkat</th>
+                          <th>Biaya (1 jam)</th>
                           <th>Status</th>
                           <th></th>
                         </tr>
                         <tr>
                           <td>1</td>
                           <td>Bahasa Jepang</td>
+                          <td>Akademik</td>
+                          <td>Beginner</td>
                           <td>Rp. 10000</td>
                           <td><div class="badge badge-success">Aktif</div></td>
                           <td>
-                            <a href="#" class="btn btn-primary">Edit</a>
+                            <router-link
+                              class="btn btn-primary"
+                              to="/guru/editcourse"
+                              >Ubah</router-link
+                            >
                           </td>
                         </tr>
                         <tr>
                           <td>2</td>
                           <td>Piano</td>
+                          <td>Non-Akademik</td>
+                          <td>Advanced</td>
                           <td>Rp. 10000</td>
                           <td>
                             <div class="badge badge-danger">Tidak Aktif</div>
                           </td>
                           <td>
-                            <a href="#" class="btn btn-primary">Edit</a>
+                            <router-link
+                              class="btn btn-primary"
+                              to="/guru/editcourse"
+                              >Ubah</router-link
+                            >
                           </td>
                         </tr>
                       </tbody>
@@ -61,11 +77,11 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from "@/components/guru/Navbar.vue";
-import Sidebar from "@/components/guru/Sidebar.vue";
+import Navbar from '@/components/guru/Navbar.vue';
+import Sidebar from '@/components/guru/Sidebar.vue';
 
 export default {
-  name: "CourseGuru",
+  name: 'CourseGuru',
   components: {
     Navbar,
     Sidebar,

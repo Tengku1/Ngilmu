@@ -13,13 +13,11 @@
       </div>
       <ul class="sidebar-menu">
         <li>
-          <a class="nav-link" href="blank.html"
-            ><i class="far fa-square"></i> <span>Ambil Course</span></a
-          >
-        </li>
-        <li>
-          <a class="nav-link" href="blank.html"
-            ><i class="far fa-square"></i> <span>Coursemu</span></a
+          <a class="nav-link"
+            ><i class="fa fa-book"></i
+            ><router-link class="nav-link" to="/murid/ambilcourse"
+              >Ambil Course</router-link
+            ></a
           >
         </li>
       </ul>
@@ -29,7 +27,7 @@
 
 <script>
 export default {
-  name: "Sidebar",
+  name: 'Sidebar',
 };
 </script>
 

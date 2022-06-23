@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import DashboardGuru from '../views/guru/Dashboard.vue';
 import CourseGuru from '../views/guru/Course.vue';
 import TambahCourseGuru from '../views/guru/TambahCourse.vue';
+import EditCourseGuru from '../views/guru/EditCourse.vue';
 import AmbilCourse from '../views/murid/AmbilCourse.vue';
 import LoginGuru from '../views/guru/Login.vue';
 import RegisterGuru from '../views/guru/Register.vue';
@@ -35,6 +36,11 @@ const routes = [
     path: '/guru/tambahcourse',
     name: 'tambahcourseguru',
     component: TambahCourseGuru,
+  },
+  {
+    path: '/guru/editcourse',
+    name: 'editcourseguru',
+    component: EditCourseGuru,
   },
   {
     path: '/murid/ambilcourse',

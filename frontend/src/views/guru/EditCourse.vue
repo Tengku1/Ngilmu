@@ -12,7 +12,7 @@
             <div class="col-12 col-md-6 col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>Formulir Tambah Course</h4>
+                  <h4>Formulir Ubah Course</h4>
                 </div>
                 <div class="card-body">
                   <div class="form-group">
@@ -70,7 +70,12 @@
                   </div>
                 </div>
                 <div class="card-footer text-right">
-                  <button class="btn btn-primary">Tambah</button>
+                  <router-link class="btn btn-danger mr-2" to="/guru/course"
+                    >Delete</router-link
+                  >
+                  <router-link class="btn btn-primary" to="/guru/course"
+                    >Ubah</router-link
+                  >
                 </div>
               </div>
             </div>
@@ -87,7 +92,7 @@ import Navbar from '@/components/guru/Navbar.vue';
 import Sidebar from '@/components/guru/Sidebar.vue';
 
 export default {
-  name: 'TambahCourseGuru',
+  name: 'EditCourseGuru',
   components: {
     Navbar,
     Sidebar,

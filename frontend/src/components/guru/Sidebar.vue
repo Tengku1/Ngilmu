@@ -13,18 +13,19 @@
       </div>
       <ul class="sidebar-menu">
         <li>
-          <a class="nav-link" href="blank.html"
-            ><i class="far fa-square"></i> <span>Dashboard</span></a
+          <a class="nav-link"
+            ><i class="fa fa-home"></i
+            ><router-link class="nav-link" to="/guru/dashboard"
+              >Dashboard</router-link
+            ></a
           >
         </li>
         <li>
           <a class="nav-link" href="blank.html"
-            ><i class="far fa-square"></i> <span>Course</span></a
-          >
-        </li>
-        <li>
-          <a class="nav-link" href="blank.html"
-            ><i class="far fa-square"></i> <span>Histori</span></a
+            ><i class="fa fa-book"></i
+            ><router-link class="nav-link" to="/guru/course"
+              >Course</router-link
+            ></a
           >
         </li>
       </ul>
@@ -34,7 +35,7 @@
 
 <script>
 export default {
-  name: "Sidebar",
+  name: 'Sidebar',
 };
 </script>
 
