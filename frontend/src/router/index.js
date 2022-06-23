@@ -4,6 +4,7 @@ import CourseGuru from '../views/guru/Course.vue';
 import TambahCourseGuru from '../views/guru/TambahCourse.vue';
 import EditCourseGuru from '../views/guru/EditCourse.vue';
 import AmbilCourse from '../views/murid/AmbilCourse.vue';
+import DetailCourse from '../views/murid/DetailCourse.vue';
 import LoginGuru from '../views/guru/Login.vue';
 import RegisterGuru from '../views/guru/Register.vue';
 import LoginMurid from '../views/murid/Login.vue';
@@ -46,6 +47,11 @@ const routes = [
     path: '/murid/ambilcourse',
     name: 'ambilcourse',
     component: AmbilCourse,
+  },
+  {
+    path: '/murid/detailcourse',
+    name: 'detailcourse',
+    component: DetailCourse,
   },
   {
     path: '/guru/login',

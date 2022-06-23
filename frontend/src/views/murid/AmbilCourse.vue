@@ -13,7 +13,11 @@
               <div class="card-header">
                 <h4>My Picture</h4>
                 <div class="card-header-action">
-                  <a href="#" class="btn btn-primary">Detail</a>
+                  <router-link
+                    class="btn btn-primary"
+                    to="/murid/detailcourse"
+                    ><i class=""></i>Detail</router-link
+                  >
                 </div>
               </div>
               <div class="card-body">
@@ -51,11 +55,11 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from "@/components/murid/Navbar.vue";
-import Sidebar from "@/components/murid/Sidebar.vue";
+import Navbar from '@/components/murid/Navbar.vue';
+import Sidebar from '@/components/murid/Sidebar.vue';
 
 export default {
-  name: "AmbilCourse",
+  name: 'AmbilCourse',
   components: {
     Navbar,
     Sidebar,
