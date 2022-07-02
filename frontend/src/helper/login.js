@@ -1,20 +1,23 @@
 import endpoint from './global';
 import axios from 'axios';
-import router from '../router/index'
+import router from '../router/index';
 
 async function login(username, password) {
   try {
     const response = await axios.post(`${endpoint}/api/login`, {
       username,
-      password
+      password,
     });
-    if(response['status'] === 200) {
-      router.push('/guru/dashboard');
+    if (response['status'] === 200) {
+      if (response.data.roles === 'Guru') {
+        router.push('/guru/dashboard');
+      } else {
+        router.push('/murid/ambilcourse');
+      }
     }
   } catch (error) {
-    alert('Password salah')
+    alert('Password anda salah, mohon coba kembali');
   }
 }
 
 export default login;
-
