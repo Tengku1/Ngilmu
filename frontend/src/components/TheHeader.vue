@@ -5,23 +5,19 @@
         <h2>Ngilmu</h2>
       </div>
       <ul class="navbar__list__container">
-        <li><button>Home</button></li>
-        <li><button>Company</button></li>
-        <li><button>Products</button></li>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/about">About Us</router-link></li>
       </ul>
       <nav>
-        <router-link class="login__link" to="/guru/dashboard"
-          >Login</router-link
-        >
+        <router-link class="login__link" to="/murid/login">Login</router-link>
         <button class="hamburger" @click="toggleBurger">=</button>
       </nav>
     </header>
     <transition name="burgerNav">
       <nav v-if="isBurgerOpen" class="burgerNav">
         <ul>
-          <li><button>Home</button></li>
-          <li><button>Company</button></li>
-          <li><button>Products</button></li>
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/about">About Us</router-link></li>
         </ul>
       </nav>
     </transition>
@@ -59,12 +55,11 @@ ul {
 
 li {
   border-bottom: 1px solid lightgray;
+  text-align: center;
 }
 
-li button {
+li a {
   width: 100%;
-  border: none;
-  background: none;
 }
 
 .burgerNav-enter-active {
@@ -103,6 +98,15 @@ li button {
   .navbar__list__container {
     display: flex;
     gap: 20px;
+  }
+
+  li {
+    border-bottom: none;
+  }
+
+  li a {
+    font-size: 1.2em;
+    font-weight: bold;
   }
 }
 </style>

@@ -33,7 +33,7 @@ footer {
 }
 
 footer.light {
-  background-color: #ded8fa;
+  background-color: #6777ef;
 }
 
 footer a {
@@ -44,7 +44,7 @@ footer a {
 }
 
 footer.light a {
-  color: #6c757d;
+  color: white;
 }
 
 footer a:hover {
