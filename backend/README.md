@@ -1,2 +1,0 @@
-# Ngilmu
-Capstone Project
