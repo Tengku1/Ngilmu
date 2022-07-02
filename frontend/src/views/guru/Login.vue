@@ -25,7 +25,7 @@
                   tabindex="1"
                   required=""
                   autofocus=""
-                  v-model="username"
+                  v-model="email"
                 />
                 <div class="invalid-feedback">Please fill in your email</div>
               </div>
@@ -50,7 +50,7 @@
                 <button
                   class="btn btn-primary btn-lg btn-icon icon-right"
                   tabindex="4"
-                  @click="login(username, password)"
+                  @click="login(email, password)"
                 >
                   Masuk
                 </button>
@@ -111,13 +111,13 @@ export default {
   name: 'LoginGuru',
   data() {
     return {
-      username: '',
+      email: '',
       password: '',
     };
   },
   methods: {
-    async login(username, password) {
-      await login(username, password);
+    async login(email, password) {
+      await login(email, password);
     },
   },
 };

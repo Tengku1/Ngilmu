@@ -120,8 +120,8 @@ export default {
     };
   },
   methods: {
-    async login(username, password) {
-      await login(username, password);
+    async login(email, password) {
+      await login(email, password);
     },
   },
 };

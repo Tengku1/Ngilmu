@@ -2,10 +2,10 @@ import endpoint from './global';
 import axios from 'axios';
 import router from '../router/index';
 
-async function login(username, password) {
+async function login(email, password) {
   try {
     const response = await axios.post(`${endpoint}/api/login`, {
-      username,
+      email,
       password,
     });
     if (response['status'] === 200) {
