@@ -9,43 +9,14 @@
             <h1>Ambil Course</h1>
           </div>
           <div class="col-12 col-sm-6 col-lg-3">
-            <div class="card">
-              <div class="card-header">
-                <h4>My Picture</h4>
-                <div class="card-header-action">
-                  <router-link
-                    class="btn btn-primary"
-                    to="/murid/detailcourse"
-                    ><i class=""></i>Detail</router-link
-                  >
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="chocolat-parent">
-                  <a
-                    href="assets/img/example-image.jpg"
-                    class="chocolat-image"
-                    title="Just an example"
-                  >
-                    <div
-                      data-crop-image="285"
-                      style="
-                        overflow: hidden;
-                        position: relative;
-                        height: 285px;
-                      "
-                    >
-                      <img
-                        alt="image"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Steinway_%26_Sons_concert_grand_piano%2C_model_D-274%2C_manufactured_at_Steinway%27s_factory_in_Hamburg%2C_Germany.png/1200px-Steinway_%26_Sons_concert_grand_piano%2C_model_D-274%2C_manufactured_at_Steinway%27s_factory_in_Hamburg%2C_Germany.png"
-                        class="img-fluid"
-                      />
-                    </div>
-                  </a>
-                </div>
-                <p>Write something here</p>
-              </div>
-            </div>
+            <course-card
+              v-for="course in courses"
+              :key="course.id"
+              :id="course.id"
+              :name="course.name"
+              :imageUrl="course.img"
+              :description="course.description"
+            ></course-card>
           </div>
         </section>
       </div>
@@ -57,12 +28,29 @@
 // @ is an alias to /src
 import Navbar from '@/components/murid/Navbar.vue';
 import Sidebar from '@/components/murid/Sidebar.vue';
+import CourseCard from '@/components/CourseCard.vue';
+import CourseApiHelper from '../../helper/courses';
+import CourseCard from '../../components/CourseCard.vue';
 
 export default {
   name: 'AmbilCourse',
+  data() {
+    return {
+      courses: [],
+    };
+  },
   components: {
     Navbar,
     Sidebar,
+    CourseCard,
+  },
+  async created() {
+    const data = await CourseApiHelper.getAllCourse();
+    if (!data) {
+      return;
+    } else {
+      this.courses = data;
+    }
   },
 };
 </script>
