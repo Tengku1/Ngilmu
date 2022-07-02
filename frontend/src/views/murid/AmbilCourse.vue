@@ -30,7 +30,6 @@ import Navbar from '@/components/murid/Navbar.vue';
 import Sidebar from '@/components/murid/Sidebar.vue';
 import CourseCard from '@/components/CourseCard.vue';
 import CourseApiHelper from '../../helper/courses';
-import CourseCard from '../../components/CourseCard.vue';
 
 export default {
   name: 'AmbilCourse',
