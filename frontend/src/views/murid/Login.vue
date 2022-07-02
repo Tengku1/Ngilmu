@@ -15,7 +15,7 @@
               inginkan.
             </p>
             <form
-              @submit.prevent="login(username, password)"
+              @submit.prevent="login(email, password)"
               class="needs-validation"
               novalidate=""
             >
