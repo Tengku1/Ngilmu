@@ -32,7 +32,8 @@ export default {
 }
 
 .feature__card:hover {
-  background-color: #ded8fa;
+  background-color: #6777ef;
   transform: translate(0) scale(1.1);
+  color: white;
 }
 </style>

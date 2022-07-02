@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: rgb(110, 17, 110);
+  background-color: #6777ef;
   margin-bottom: 0;
   border-radius: 0;
 }

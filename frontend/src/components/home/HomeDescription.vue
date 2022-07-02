@@ -24,7 +24,8 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #ded8fa;
+  background-color: #6777ef;
+  color: white;
 }
 
 .item {
