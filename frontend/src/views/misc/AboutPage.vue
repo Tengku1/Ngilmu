@@ -4,7 +4,7 @@
   <main>
     <about-team></about-team>
   </main>
-  <the-footer></the-footer>
+  <the-footer type="light"></the-footer>
 </template>
 
 <script>

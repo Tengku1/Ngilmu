@@ -1,42 +1,31 @@
 <template>
-<div id="app">
+  <div id="app">
     <section class="section">
       <div class="d-flex flex-wrap align-items-stretch">
         <div
-          class="
-            col-lg-4 col-md-6 col-12
-            order-lg-1
-            min-vh-100
-            order-2
-            bg-white
-          "
+          class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white"
         >
           <div class="p-4 m-3">
             <h4 class="text-dark font-weight-normal">
               Selamat Datang di <span class="font-weight-bold">Ngilmu</span>
             </h4>
-            <h6 class="text-dark font-weight-bold mt-3">
-              Login Sebagai Guru
-            </h6>
+            <h6 class="text-dark font-weight-bold mt-3">Login Sebagai Guru</h6>
             <p class="text-muted">
-              Kamu harus login terlebih dahulu sebelum memulai menyediakan informasi course yang ingin diberikan.
+              Kamu harus login terlebih dahulu sebelum memulai menyediakan
+              informasi course yang ingin diberikan.
             </p>
-            <form
-              method="POST"
-              action="#"
-              class="needs-validation"
-              novalidate=""
-            >
+            <form @submit.prevent class="needs-validation" novalidate="">
               <div class="form-group">
                 <label for="email">Email</label>
                 <input
                   id="email"
-                  type="email"
+                  type="text"
                   class="form-control"
                   name="email"
                   tabindex="1"
                   required=""
                   autofocus=""
+                  v-model="username"
                 />
                 <div class="invalid-feedback">Please fill in your email</div>
               </div>
@@ -52,15 +41,16 @@
                   name="password"
                   tabindex="2"
                   required=""
+                  v-model="password"
                 />
                 <div class="invalid-feedback">please fill in your password</div>
               </div>
 
               <div class="form-group text-right">
                 <button
-                  type="submit"
                   class="btn btn-primary btn-lg btn-icon icon-right"
                   tabindex="4"
+                  @click="login(username, password)"
                 >
                   Masuk
                 </button>
@@ -73,20 +63,15 @@
               </div>
               <div class="mt-2 text-center">
                 Belum memiliki akun?
-                <router-link class="text" to="/murid/register">Buat akunmu disini</router-link>
+                <router-link class="text" to="/murid/register"
+                  >Buat akunmu disini</router-link
+                >
               </div>
             </form>
           </div>
         </div>
         <div
-          class="
-            col-lg-8 col-12
-            order-lg-2 order-1
-            min-vh-100
-            background-walk-y
-            position-relative
-            overlay-gradient-bottom
-          "
+          class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom"
           data-background="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
           style="background-image: url('../assets/img/unsplash/login-bg.jpg')"
         >
@@ -121,12 +106,21 @@
 </template>
 
 <script>
+import login from '../../helper/login';
 export default {
-  name: "LoginGuru",
-
-}
+  name: 'LoginGuru',
+  data() {
+    return {
+      username: '',
+      password: '',
+    };
+  },
+  methods: {
+    async login(username, password) {
+      await login(username, password);
+    },
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
