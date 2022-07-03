@@ -49,9 +49,10 @@ const routes = [
     component: AmbilCourse,
   },
   {
-    path: '/murid/detailcourse',
+    path: '/murid/detailcourse/:id',
     name: 'detailcourse',
     component: DetailCourse,
+    props: true,
   },
   {
     path: '/guru/login',

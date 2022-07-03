@@ -9,8 +9,19 @@ const CourseApiHelper = {
         return response.data;
       }
     } catch (error) {
-      console.log('error');
+      console.log('Error');
       alert('Telah terjadi error');
+      return;
+    }
+  },
+  getCourseById: async function (id) {
+    try {
+      const response = await axios.get(`${endpoint}/api/courses/${id}`);
+      if (response.status === 200) {
+        return response.data;
+      }
+    } catch (error) {
+      console.log('Error');
       return;
     }
   },

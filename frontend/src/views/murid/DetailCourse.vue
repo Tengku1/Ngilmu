@@ -11,11 +11,9 @@
 
           <div class="section-body">
             <h2>
-              <router-link
-                class="btn btn-primary"
-                to="/murid/ambilcourse"
-                ><i class="	fa fa-angle-left"></i></router-link
-              >
+              <router-link class="btn btn-primary" to="/murid/ambilcourse"
+                ><i class="fa fa-angle-left"></i
+              ></router-link>
             </h2>
             <div class="row">
               <div class="col-12 col-sm-12 col-lg-12">
@@ -24,7 +22,7 @@
                     <div class="author-box-left">
                       <img
                         alt="image"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Steinway_%26_Sons_concert_grand_piano%2C_model_D-274%2C_manufactured_at_Steinway%27s_factory_in_Hamburg%2C_Germany.png/1200px-Steinway_%26_Sons_concert_grand_piano%2C_model_D-274%2C_manufactured_at_Steinway%27s_factory_in_Hamburg%2C_Germany.png"
+                        :src="courseDetail.imageUrl"
                         class="rounded-circle author-box-picture"
                       />
                       <div class="clearfix"></div>
@@ -38,12 +36,12 @@
                     </div>
                     <div class="author-box-details">
                       <div class="author-box-name">
-                        <a>Bahasa Jepang (Beginner)</a>
+                        <a>{{ courseDetail.name }}</a>
                       </div>
-                      <div class="author-box-job">Akademik</div>
+                      <div class="author-box-job">{{ courseDetail.type }}</div>
                       <div class="author-box-description">
-                        <p>Deskripsi :</p>
-                        <p>Biaya :</p>
+                        <p>Deskripsi : {{ courseDetail.description }}</p>
+                        <p>Biaya : {{ courseDetail.price }}</p>
                       </div>
                       <div class="w-100 d-sm-none"></div>
                     </div>
@@ -62,12 +60,28 @@
 // @ is an alias to /src
 import Navbar from '@/components/murid/Navbar.vue';
 import Sidebar from '@/components/murid/Sidebar.vue';
+import CourseApiHelper from '../../helper/courses';
 
 export default {
   name: 'DetailCourse',
+  props: ['id'],
+  data() {
+    return {
+      courseDetail: {},
+    };
+  },
   components: {
     Navbar,
     Sidebar,
+  },
+  async created() {
+    const response = await CourseApiHelper.getCourseById(this.id);
+    if (!response) {
+      alert(`Course dengan id ${this.id} tidak ditemukan`);
+      return;
+    }
+
+    this.courseDetail = Object.assign(this.courseDetail, response);
   },
 };
 </script>
