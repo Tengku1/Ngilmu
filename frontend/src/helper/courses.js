@@ -32,7 +32,7 @@ const CourseApiHelper = {
     return response.data;
   },
   addCourse: async function (teacherId, name, type, img, description, price) {
-    const response = await axios.post(`${endpoint}/api/course`, {
+    const response = await axios.post(`${endpoint}/api/courses`, {
       teacherId,
       name,
       type,

@@ -107,7 +107,7 @@ export default {
         );
         if (response.status === 200) {
           alert('Course berhasil ditambahkan');
-          router.push(`/guru/${teacherId}/courses`);
+          router.push(`/guru/${teacherId}/course`);
         }
       } catch (error) {
         alert(error.message);
