@@ -42,7 +42,7 @@ const routes = [
     props: true,
   },
   {
-    path: '/guru/:teacherId/editcourse',
+    path: '/guru/:teacherId/editcourse/:id',
     name: 'editcourseguru',
     component: EditCourseGuru,
     props: true,

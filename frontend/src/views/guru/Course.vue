@@ -2,7 +2,7 @@
   <div id="app">
     <div class="main-wrapper">
       <Navbar />
-      <side-bar :teacherId="teacherId"></side-bar>
+      <sidebar :teacherId="teacherId"></sidebar>
       <div class="main-content" style="min-height: 757px">
         <section class="section">
           <div class="section-header">
@@ -13,7 +13,9 @@
               <div class="card">
                 <div class="card-header">
                   <h4>Tabel Course</h4>
-                  <router-link class="btn btn-info" to="/guru/tambahcourse"
+                  <router-link
+                    class="btn btn-info"
+                    :to="`/guru/${teacherId}/tambahcourse`"
                     >Tambah Course</router-link
                   >
                 </div>
@@ -59,7 +61,9 @@ export default {
   name: 'CourseGuru',
   props: ['teacherId'],
   data() {
-    courses: [];
+    return {
+      courses: [],
+    };
   },
   components: {
     Navbar,
