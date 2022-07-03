@@ -67,7 +67,7 @@
               </div>
               <div class="mt-2 text-center">
                 Belum memiliki akun?
-                <router-link class="text" to="/guru/register"
+                <router-link class="text" to="/murid/register"
                   >Buat akunmu disini</router-link
                 >
               </div>
