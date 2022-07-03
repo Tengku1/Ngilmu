@@ -104,7 +104,7 @@ li a {
     border-bottom: none;
   }
 
-  li a {
+  a {
     font-size: 1.2em;
     font-weight: bold;
   }
