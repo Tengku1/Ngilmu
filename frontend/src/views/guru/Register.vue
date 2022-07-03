@@ -3,73 +3,41 @@
     <section class="section">
       <div class="container mt-5">
         <div class="row">
-          <div
-            class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2"
-          >
+          <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
             <div class="login-brand">
-              <img
-                src="assets/img/stisla-fill.svg"
-                alt="logo"
-                width="100"
-                class="shadow-light rounded-circle"
-              />
+              <img src="assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle" />
             </div>
 
             <div class="card card-primary">
-              <div class="card-header"><h4>Daftar Sebagai Guru</h4></div>
+              <div class="card-header">
+                <h4>Daftar Sebagai Guru</h4>
+              </div>
 
               <div class="card-body">
-                <form
-                  @submit.prevent="
-                    register(email, fullName, password, phoneNumber, 'Guru')
-                  "
-                >
+                <form @submit.prevent="
+                  register(email, fullName, password, phoneNumber, 'Guru')
+                ">
                   <div class="form-group">
                     <label for="name">Nama Lengkap</label>
-                    <input
-                      v-model="fullName"
-                      id="name"
-                      type="text"
-                      class="form-control"
-                      name="name"
-                      autofocus=""
-                    />
+                    <input v-model="fullName" id="name" type="text" class="form-control" name="name" autofocus="" />
                   </div>
 
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input
-                      v-model="email"
-                      id="email"
-                      type="email"
-                      class="form-control"
-                      name="email"
-                    />
+                    <input v-model="email" id="email" type="email" class="form-control" name="email" />
                     <div class="invalid-feedback"></div>
                   </div>
 
                   <div class="form-group">
                     <label for="nomer">Nomer Whatsapp</label>
-                    <input
-                      v-model="phoneNumber"
-                      id="nomer"
-                      type="number"
-                      class="form-control"
-                      name="nomer"
-                      autofocus=""
-                    />
+                    <input v-model="phoneNumber" id="nomer" type="number" class="form-control" name="nomer"
+                      autofocus="" />
                   </div>
 
                   <div class="form-group">
                     <label for="password" class="d-block">Password</label>
-                    <input
-                      v-model="password"
-                      id="password"
-                      type="password"
-                      class="form-control pwstrength"
-                      data-indicator="pwindicator"
-                      name="password"
-                    />
+                    <input v-model="password" id="password" type="password" class="form-control pwstrength"
+                      data-indicator="pwindicator" name="password" />
                     <div id="pwindicator" class="pwindicator">
                       <div class="bar"></div>
                       <div class="label"></div>
@@ -77,10 +45,7 @@
                   </div>
 
                   <div class="form-group">
-                    <button
-                      type="submit"
-                      class="btn btn-primary btn-lg btn-block"
-                    >
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
                       Daftar
                     </button>
                   </div>
@@ -109,7 +74,8 @@ export default {
     };
   },
   methods: {
-    async register(email, fullName, phoneNumber, password, roles = 'Guru') {
+    async register(email, fullName, password, phoneNumber, roles = 'Guru') {
+      password = password.toString();
       try {
         const response = await register(
           email,
@@ -118,13 +84,8 @@ export default {
           password,
           roles
         );
-        if (response['user'].email === email) {
-          alert(
-            `Pendaftaran sebagai ${roles} berhasil, silahkan login sesuai ${roles}`
-          );
-          setTimeout(() => {
-            router.push('/guru/login');
-          }, 3000);
+        if (response) {
+          router.push('/guru/login');
         }
       } catch (error) {
         alert('Telah terjadi kesalahan..');
@@ -135,4 +96,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

@@ -1,12 +1,12 @@
 import endpoint from './global';
 import axios from 'axios';
 
-async function register(email, fullName, phoneNumber, password, roles) {
+async function register(email, fullName, password, phoneNumber, roles) {
   const response = await axios.post(`${endpoint}/api/register`, {
     email,
     full_name: fullName,
-    password,
     phone: phoneNumber,
+    password,
     roles,
   });
   return response;
