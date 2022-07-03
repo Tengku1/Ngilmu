@@ -9,7 +9,7 @@ async function login(email, password) {
       password,
     });
     if (response['status'] === 200) {
-      if (response.data.roles === 'Guru') {
+      if (response['user'].roles === 'Guru') {
         router.push('/guru/dashboard');
       } else {
         router.push('/murid/ambilcourse');
