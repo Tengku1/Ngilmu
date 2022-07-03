@@ -11,3 +11,5 @@ async function register(email, fullName, phoneNumber, password, roles) {
   });
   return response;
 }
+
+export default register;
