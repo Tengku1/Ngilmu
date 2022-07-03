@@ -20,17 +20,11 @@ export default {
   props: ['course', 'index', 'teacherId'],
   methods: {
     async deleteCourse() {
-      try {
-        const response = await CourseApiHelper.deleteCourse(
-          this.course.id,
-          this.teacherId
-        );
-        if (response.status === 200) {
-          alert('Course berhasil dihapus');
-        }
-      } catch (error) {
-        alert('Data gagal dihapus.');
-      }
+      const response = await CourseApiHelper.deleteCourse(
+        this.course.id,
+        this.teacherId
+      );
+      alert('Course berhasil dihapus');
     },
   },
 };
