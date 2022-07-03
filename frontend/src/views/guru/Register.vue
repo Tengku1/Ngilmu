@@ -21,7 +21,7 @@
               <div class="card-body">
                 <form
                   @submit.prevent="
-                    register(email, fullName, password, phoneNumber)
+                    register(email, fullName, password, phoneNumber, 'Guru')
                   "
                 >
                   <div class="form-group">
