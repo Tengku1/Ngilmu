@@ -20,7 +20,6 @@ export default {
   props: ['course', 'index', 'teacherId'],
   methods: {
     async deleteCourse() {
-      console.log(this.course);
       try {
         const response = await CourseApiHelper.deleteCourse(
           this.course.id,
