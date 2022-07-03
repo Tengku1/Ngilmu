@@ -79,7 +79,6 @@
 import Navbar from '@/components/guru/Navbar.vue';
 import Sidebar from '@/components/guru/Sidebar.vue';
 import CourseApiHelper from '../../helper/courses';
-import Sidebar from '../../components/guru/Sidebar.vue';
 
 export default {
   props: ['teacherId', 'id'],
