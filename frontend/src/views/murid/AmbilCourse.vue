@@ -8,16 +8,14 @@
           <div class="section-header">
             <h1>Ambil Course</h1>
           </div>
-          <div class="col-12 col-sm-6 col-lg-3">
-            <course-card
-              v-for="course in courses"
-              :key="course.id"
-              :id="course.id"
-              :name="course.name"
-              :imageUrl="course.img"
-              :description="course.description"
-            ></course-card>
-          </div>
+          <course-card
+            v-for="course in courses"
+            :key="course.id"
+            :id="course.id"
+            :name="course.name"
+            :imageUrl="course.img"
+            :description="course.description"
+          ></course-card>
         </section>
       </div>
     </div>
