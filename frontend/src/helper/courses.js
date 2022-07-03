@@ -31,6 +31,17 @@ const CourseApiHelper = {
     );
     return response.data;
   },
+  addCourse: async function (teacherId, name, type, img, description, price) {
+    const response = await axios.post(`${endpoint}/api/course`, {
+      teacherId,
+      name,
+      type,
+      img,
+      description,
+      price,
+    });
+    return response;
+  },
 };
 
 export default CourseApiHelper;
