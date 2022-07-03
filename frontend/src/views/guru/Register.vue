@@ -116,7 +116,7 @@ export default {
           this.fullName,
           this.phoneNumber,
           password,
-          roles
+          this.roles
         );
         if (response) {
           router.push('/guru/login');
