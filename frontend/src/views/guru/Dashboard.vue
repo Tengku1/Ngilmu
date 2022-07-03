@@ -2,8 +2,8 @@
   <div id="app">
     <div class="main-wrapper">
       <Navbar />
-      <Sidebar />
-      <div class="main-content" style="min-height: 757px;">
+      <sidebar :teacherId="teacherId"></sidebar>
+      <div class="main-content" style="min-height: 757px">
         <section class="section">
           <div class="section-header">
             <h1>Dashboard</h1>
@@ -18,9 +18,7 @@
                   <div class="card-header">
                     <h4>Total Course</h4>
                   </div>
-                  <div class="card-body">
-                    2
-                  </div>
+                  <div class="card-body">2</div>
                 </div>
               </div>
             </div>
@@ -33,9 +31,7 @@
                   <div class="card-header">
                     <h4>Course Aktif</h4>
                   </div>
-                  <div class="card-body">
-                    1
-                  </div>
+                  <div class="card-body">1</div>
                 </div>
               </div>
             </div>
@@ -48,12 +44,10 @@
                   <div class="card-header">
                     <h4>Course Tidak Aktif</h4>
                   </div>
-                  <div class="card-body">
-                    1
-                  </div>
+                  <div class="card-body">1</div>
                 </div>
               </div>
-            </div>            
+            </div>
           </div>
         </section>
       </div>
@@ -63,14 +57,15 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from "@/components/guru/Navbar.vue";
-import Sidebar from "@/components/guru/Sidebar.vue";
+import Navbar from '@/components/guru/Navbar.vue';
+import Sidebar from '@/components/guru/Sidebar.vue';
 
 export default {
-  name: "DashboardGuru",
+  props: ['teacherId'],
+  name: 'DashboardGuru',
   components: {
     Navbar,
-    Sidebar
+    Sidebar,
   },
 };
 </script>

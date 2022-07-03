@@ -25,6 +25,12 @@ const CourseApiHelper = {
       return;
     }
   },
+  getCoursesByTeacherId: async function (teacherId) {
+    const response = await axios.post(
+      `${endpoint}/api/teacher/${teacherId}/courses`
+    );
+    return response.data;
+  },
 };
 
 export default CourseApiHelper;

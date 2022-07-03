@@ -10,7 +10,8 @@ async function login(email, password) {
     });
     if (response['status'] === 200) {
       if (response['data']['user'].roles === 'Guru') {
-        router.push('/guru/dashboard');
+        router.push(`guru/${response['data']['user'].id}/dashboard`);
+        return response['data']['user'].id;
       } else {
         router.push('/murid/ambilcourse');
       }

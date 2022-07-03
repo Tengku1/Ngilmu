@@ -24,24 +24,28 @@ const routes = [
     component: AboutPage,
   },
   {
-    path: '/guru/dashboard',
+    path: '/guru/:teacherId/dashboard',
     name: 'dashboardguru',
     component: DashboardGuru,
+    props: true,
   },
   {
-    path: '/guru/course',
+    path: '/guru/:teacherId/course',
     name: 'courseguru',
     component: CourseGuru,
+    props: true,
   },
   {
-    path: '/guru/tambahcourse',
+    path: '/guru/:teacherId/tambahcourse',
     name: 'tambahcourseguru',
     component: TambahCourseGuru,
+    props: true,
   },
   {
-    path: '/guru/editcourse',
+    path: '/guru/:teacherId/editcourse',
     name: 'editcourseguru',
     component: EditCourseGuru,
+    props: true,
   },
   {
     path: '/murid/ambilcourse',

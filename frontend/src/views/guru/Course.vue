@@ -2,7 +2,7 @@
   <div id="app">
     <div class="main-wrapper">
       <Navbar />
-      <Sidebar />
+      <side-bar :teacherId="teacherId"></side-bar>
       <div class="main-content" style="min-height: 757px">
         <section class="section">
           <div class="section-header">
@@ -25,43 +25,16 @@
                           <th>ID</th>
                           <th>Course</th>
                           <th>Tipe</th>
-                          <th>Tingkat</th>
                           <th>Biaya (1 jam)</th>
-                          <th>Status</th>
                           <th></th>
                         </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>Bahasa Jepang</td>
-                          <td>Akademik</td>
-                          <td>Beginner</td>
-                          <td>Rp. 10000</td>
-                          <td><div class="badge badge-success">Aktif</div></td>
-                          <td>
-                            <router-link
-                              class="btn btn-primary"
-                              to="/guru/editcourse"
-                              >Ubah</router-link
-                            >
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Piano</td>
-                          <td>Non-Akademik</td>
-                          <td>Advanced</td>
-                          <td>Rp. 10000</td>
-                          <td>
-                            <div class="badge badge-danger">Tidak Aktif</div>
-                          </td>
-                          <td>
-                            <router-link
-                              class="btn btn-primary"
-                              to="/guru/editcourse"
-                              >Ubah</router-link
-                            >
-                          </td>
-                        </tr>
+                        <course-table
+                          v-for="(course, index) in courses"
+                          :key="course.id"
+                          :course="course"
+                          :index="index"
+                          :teacherId="teacherId"
+                        ></course-table>
                       </tbody>
                     </table>
                   </div>
@@ -79,12 +52,31 @@
 // @ is an alias to /src
 import Navbar from '@/components/guru/Navbar.vue';
 import Sidebar from '@/components/guru/Sidebar.vue';
+import CourseTable from './CourseTable.vue';
+import CourseApiHelper from '../../helper/courses';
 
 export default {
   name: 'CourseGuru',
+  props: ['teacherId'],
+  data() {
+    courses: [];
+  },
   components: {
     Navbar,
     Sidebar,
+    CourseTable,
+  },
+  async created() {
+    try {
+      const responseData = await CourseApiHelper.getCoursesByTeacherId(
+        this.teacherId
+      );
+      if (responseData) {
+        this.courses = responseData;
+      }
+    } catch (error) {
+      alert('Telah terjadi kesalahan..');
+    }
   },
 };
 </script>
