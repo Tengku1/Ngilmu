@@ -27,7 +27,7 @@
                       />
                       <div class="clearfix"></div>
                       <a
-                        href="#"
+                        href="https://api.whatsapp.com/send/?phone=6282145858358&text&type=phone_number&app_absent=0"
                         class="btn btn-success mt-3 follow-btn"
                         data-follow-action="alert('follow clicked');"
                         data-unfollow-action="alert('unfollow clicked');"
