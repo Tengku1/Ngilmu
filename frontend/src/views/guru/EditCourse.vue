@@ -121,6 +121,11 @@ export default {
     console.log(response);
     if (response) {
       this.course = response;
+      this.name = this.course.name;
+      this.description = this.course.description;
+      this.type = this.course.type;
+      this.price = this.course.price;
+      this.imageUrl = this.course.img;
     } else {
       alert('gagal');
     }
