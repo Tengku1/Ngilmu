@@ -86,11 +86,11 @@ export default {
   data() {
     return {
       course: null,
-      name: this.course.name,
-      description: this.course.description,
-      type: this.course.type,
-      price: this.course.price,
-      imageUrl: this.course.img,
+      name: '',
+      description: '',
+      type: '',
+      price: '',
+      imageUrl: '',
     };
   },
   components: {
