@@ -52,6 +52,12 @@ const CourseApiHelper = {
     });
     return response;
   },
+  deleteCourse: async function (id, teacherId) {
+    const response = await axios.delete(`${endpoint}/api/courses/${id}`, {
+      teacherId,
+    });
+    return response;
+  },
 };
 
 export default CourseApiHelper;
