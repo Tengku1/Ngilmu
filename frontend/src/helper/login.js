@@ -9,14 +9,14 @@ async function login(email, password) {
       password,
     });
     if (response['status'] === 200) {
-      if (response['user'].roles === 'Guru') {
+      if (response['data']['user'].roles === 'Guru') {
         router.push('/guru/dashboard');
       } else {
         router.push('/murid/ambilcourse');
       }
     }
   } catch (error) {
-    alert('Password anda salah, mohon coba kembali');
+    alert(error.message);
   }
 }
 
