@@ -4,16 +4,7 @@
       <div class="container mt-5">
         <div class="row">
           <div
-            class="
-              col-12 col-sm-10
-              offset-sm-1
-              col-md-8
-              offset-md-2
-              col-lg-8
-              offset-lg-2
-              col-xl-8
-              offset-xl-2
-            "
+            class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2"
           >
             <div class="login-brand">
               <img
@@ -28,10 +19,15 @@
               <div class="card-header"><h4>Daftar Sebagai Guru</h4></div>
 
               <div class="card-body">
-                <form method="POST">
+                <form
+                  @submit.prevent="
+                    register(email, fullName, password, phoneNumber)
+                  "
+                >
                   <div class="form-group">
                     <label for="name">Nama Lengkap</label>
                     <input
+                      v-model="fullName"
                       id="name"
                       type="text"
                       class="form-control"
@@ -43,6 +39,7 @@
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input
+                      v-model="email"
                       id="email"
                       type="email"
                       class="form-control"
@@ -54,6 +51,7 @@
                   <div class="form-group">
                     <label for="nomer">Nomer Whatsapp</label>
                     <input
+                      v-model="phoneNumber"
                       id="nomer"
                       type="number"
                       class="form-control"
@@ -65,6 +63,7 @@
                   <div class="form-group">
                     <label for="password" class="d-block">Password</label>
                     <input
+                      v-model="password"
                       id="password"
                       type="password"
                       class="form-control pwstrength"
@@ -97,10 +96,43 @@
 </template>
 
 <script>
+import register from '../../helper/register';
+import router from '../../router/index';
 export default {
-  name: "RegisterGuru",
+  name: 'RegisterGuru',
+  data() {
+    return {
+      fullName: '',
+      email: '',
+      password: '',
+      phoneNumber: '',
+    };
+  },
+  methods: {
+    async register(email, fullName, phoneNumber, password, roles = 'Guru') {
+      try {
+        const response = await register(
+          email,
+          fullName,
+          phoneNumber,
+          password,
+          roles
+        );
+        if (response['user'].email === email) {
+          alert(
+            `Pendaftaran sebagai ${roles} berhasil, silahkan login sesuai ${roles}`
+          );
+          setTimeout(() => {
+            router.push('/guru/login');
+          }, 3000);
+        }
+      } catch (error) {
+        alert('Telah terjadi kesalahan..');
+        console.log(error.message);
+      }
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>
