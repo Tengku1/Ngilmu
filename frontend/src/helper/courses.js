@@ -42,6 +42,16 @@ const CourseApiHelper = {
     });
     return response;
   },
+  editCourse: async function (id, name, type, img, description, price) {
+    const response = await axios.put(`${endpoint}/api/courses/${id}`, {
+      name,
+      description,
+      type,
+      img,
+      price,
+    });
+    return response;
+  },
 };
 
 export default CourseApiHelper;

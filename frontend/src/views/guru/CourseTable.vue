@@ -5,7 +5,9 @@
     <td>{{ course.type }}</td>
     <td>{{ course.price }}</td>
     <td>
-      <router-link class="btn btn-primary" to="/guru/editcourse"
+      <router-link
+        class="btn btn-primary"
+        :to="`/guru/${teacherId}/editcourse/${course.id}`"
         >Ubah</router-link
       >
     </td>

@@ -2,7 +2,7 @@
   <div id="app">
     <div class="main-wrapper">
       <Navbar />
-      <Sidebar />
+      <sidebar :teacherId="teacherId"></sidebar>
       <div class="main-content" style="min-height: 757px">
         <section class="section">
           <div class="section-header">
@@ -17,14 +17,18 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label>Nama Course</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" v-model="name" />
                   </div>
                   <div class="form-group">
                     <label
                       >Deskripsi Course (deskripsi mengenai course, daerah
                       cakupan untuk belajar langsung ke rumah, dll.)</label
                     >
-                    <input type="text" class="form-control" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="description"
+                    />
                   </div>
                   <div class="form-group">
                     <label>Tipe</label>
@@ -32,41 +36,25 @@
                       class="form-control select2 select2-hidden-accessible"
                       tabindex="-1"
                       aria-hidden="true"
+                      v-model="type"
                     >
-                      <option>Akademik</option>
-                      <option>Non-Akademik</option>
+                      <option value="akademik">Akademik</option>
+                      <option value="non-akademik">Non-Akademik</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                    <label>Tingkat</label>
-                    <select
-                      class="form-control select2 select2-hidden-accessible"
-                      tabindex="-1"
-                      aria-hidden="true"
-                    >
-                      <option>Beginner</option>
-                      <option>Intermediate</option>
-                      <option>Advanced</option>
-                    </select>
-                  </div>
+
                   <div class="form-group">
                     <label>Biaya (1 jam)</label>
-                    <input type="number" class="form-control" />
+                    <input type="number" v-model="price" class="form-control" />
                   </div>
-                  <div class="form-group">
-                    <label>Status</label>
-                    <select
-                      class="form-control select2 select2-hidden-accessible"
-                      tabindex="-1"
-                      aria-hidden="true"
-                    >
-                      <option>Aktif</option>
-                      <option>Tidak Aktif</option>
-                    </select>
-                  </div>
+
                   <div class="form-group">
                     <label>Link url gambar course</label>
-                    <input type="text" class="form-control" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="imageUrl"
+                    />
                   </div>
                 </div>
                 <div class="card-footer text-right">
@@ -91,17 +79,49 @@
 import Navbar from '@/components/guru/Navbar.vue';
 import Sidebar from '@/components/guru/Sidebar.vue';
 import CourseApiHelper from '../../helper/courses';
+import Sidebar from '../../components/guru/Sidebar.vue';
 
 export default {
   props: ['teacherId', 'id'],
   name: 'EditCourseGuru',
   data() {
-    return {};
+    return {
+      course: null,
+      name: this.course.name,
+      description: this.course.description,
+      type: this.course.type,
+      price: this.course.price,
+      imageUrl: this.course.img,
+    };
   },
   components: {
     Navbar,
     Sidebar,
   },
-  methods: {},
+  methods: {
+    async editCourse() {
+      try {
+        const response = await CourseApiHelper.editCourse(
+          this.id,
+          this.name,
+          this.type,
+          this.imageUrl,
+          this.description,
+          this.price
+        );
+        if (response.status === 200) {
+          alert('Data course berhasil diubah');
+        }
+      } catch (error) {
+        alert(error.message);
+      }
+    },
+  },
+  async created() {
+    const response = CourseApiHelper.getCourseById(this.id);
+    if (response) {
+      this.course = response;
+    }
+  },
 };
 </script>
