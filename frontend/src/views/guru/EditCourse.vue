@@ -58,12 +58,9 @@
                   </div>
                 </div>
                 <div class="card-footer text-right">
-                  <router-link class="btn btn-danger mr-2" to="/guru/course"
-                    >Delete</router-link
-                  >
-                  <router-link class="btn btn-primary" to="/guru/course"
-                    >Ubah</router-link
-                  >
+                  <button @click="editcourse" class="btn btn-primary">
+                    Simpan
+                  </button>
                 </div>
               </div>
             </div>
