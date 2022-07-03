@@ -5,11 +5,7 @@
     <td>{{ course.type }}</td>
     <td>{{ course.price }}</td>
     <td>
-      <router-link
-        class="btn btn-primary"
-        :to="`/guru/${teacherId}/editcourse/${course.id}`"
-        >Ubah</router-link
-      >
+      <router-link class="btn btn-primary" :to="`/guru/${teacherId}/editcourse/${course.id}`">Ubah</router-link>
     </td>
     <td>
       <button @click="deleteCourse" class="btn btn-primary">Hapus</button>
@@ -24,6 +20,7 @@ export default {
   props: ['course', 'index', 'teacherId'],
   methods: {
     async deleteCourse() {
+      console.log(this.course);
       try {
         const response = await CourseApiHelper.deleteCourse(
           this.course.id,
@@ -31,7 +28,6 @@ export default {
         );
         if (response.status === 200) {
           alert('Course berhasil dihapus');
-          router.push(`/guru/${this.teacherId}/course`);
         }
       } catch (error) {
         alert('Data gagal dihapus.');
