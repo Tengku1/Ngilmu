@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="item">
-      <img src="../../../src/assets/img/misc/1.png" alt="" />
+      <img src="../../../src/assets/img/misc/home.png" alt="" />
       <!-- Ganti jadi gambar yang sesuai -->
     </div>
     <div class="item desc__container">
@@ -29,6 +29,12 @@ section {
 .item {
   flex: 1 1 328px;
   text-align: center;
+}
+
+.item img {
+  width: 530px;
+  height: 460px;
+  padding: 50px;
 }
 
 .desc__container {
