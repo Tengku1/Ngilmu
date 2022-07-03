@@ -117,9 +117,12 @@ export default {
     },
   },
   async created() {
-    const response = CourseApiHelper.getCourseById(this.id);
+    const response = await CourseApiHelper.getCourseById(this.id);
+    console.log(response);
     if (response) {
       this.course = response;
+    } else {
+      alert('gagal');
     }
   },
 };
