@@ -3,7 +3,7 @@
     <div class="card-header">
       <h4>{{ name }}</h4>
       <div class="card-header-action">
-        <router-link class="btn btn-primary" :to="`/detailcourse/${id}`"
+        <router-link class="btn btn-primary" :to="`/murid/detailcourse/${id}`"
           ><i class=""></i>Detail</router-link
         >
       </div>
