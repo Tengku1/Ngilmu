@@ -22,7 +22,7 @@
                     <div class="author-box-left">
                       <img
                         alt="image"
-                        :src="courseDetail.imageUrl"
+                        :src="courseDetail.img"
                         class="rounded-circle author-box-picture"
                       />
                       <div class="clearfix"></div>
@@ -80,6 +80,7 @@ export default {
       alert(`Course dengan id ${this.id} tidak ditemukan`);
       return;
     }
+    console.log(response);
 
     this.courseDetail = Object.assign(this.courseDetail, response);
   },
