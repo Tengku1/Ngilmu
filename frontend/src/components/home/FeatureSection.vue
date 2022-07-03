@@ -5,34 +5,34 @@
     <div class="grid">
       <feature-card featureName="Temukan Guru">
         <template #default
-          ><i class="fa-solid fa-person-chalkboard"></i
+          ><i class="fa-solid fa-person-chalkboard fa-xl"></i
         ></template>
         <template #description
           >Temukan berbagai guru yang kompeten di bidangnya</template
         >
       </feature-card>
-      <feature-card featureName="Temukan Guru">
+      <feature-card featureName="Harga Transparan">
         <template #default
-          ><i class="fa-solid fa-person-chalkboard"></i
+          ><i class="fa-solid fa-hand-holding-dollar fa-xl"></i
         ></template>
         <template #description
-          >Temukan berbagai guru yang kompeten di bidangnya</template
+          >Harga transparan, bahkan dapat dinegosiasikan dengan masing-masing
+          guru</template
         >
       </feature-card>
-      <feature-card featureName="Temukan Guru">
-        <template #default
-          ><i class="fa-solid fa-person-chalkboard"></i
-        ></template>
+      <feature-card featureName="Direct Contact">
+        <template #default><i class="fa-solid fa-message fa-xl"></i></template>
         <template #description
-          >Temukan berbagai guru yang kompeten di bidangnya</template
+          >Kontak langsung dengan guru dapat dilakukan sebelum melakukan
+          pembayaran</template
         >
       </feature-card>
-      <feature-card featureName="Temukan Guru">
+      <feature-card featureName="Harga Terjangkau">
         <template #default
-          ><i class="fa-solid fa-person-chalkboard"></i
+          ><i class="fa-solid fa-money-bill-1-wave fa-xl"></i
         ></template>
         <template #description
-          >Temukan berbagai guru yang kompeten di bidangnya</template
+          >Harga yang dapat dijangkau oleh masyarakat Indonesia</template
         >
       </feature-card>
     </div>

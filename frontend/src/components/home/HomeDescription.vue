@@ -2,18 +2,16 @@
   <section>
     <div class="item">
       <img src="../../../src/assets/img/misc/1.png" alt="" />
+      <!-- Ganti jadi gambar yang sesuai -->
     </div>
     <div class="item desc__container">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-        voluptatum? Magni, vel aliquid. Cupiditate ipsa officiis eius laudantium
-        perferendis inventore incidunt saepe sapiente, consequatur impedit aut
-        dolores! Eveniet voluptatum doloremque ex id fugiat vitae nulla nobis
-        accusamus delectus, dolore tempore, obcaecati expedita mollitia!
-        Incidunt, rem explicabo eius sed soluta ipsa beatae deserunt similique
-        molestiae amet officiis est, dignissimos dicta fuga. Minus libero
-        quibusdam architecto repellat incidunt eum, at sunt sint debitis quas
-        repellendus facilis assumenda?
+        Ngilmu adalah sebuah website yang didedikasikan untuk mempertemukan guru
+        les privat dengan siswa yang membutuhkannya. Biasanya, orang tua siswa
+        yang ingin mencarikan anaknya guru les privat hanya dapat mengetahui
+        informasinya dari mulut ke mulut. Platform ini diharapkan dapat membantu
+        orang tua siswa, serta guru yang ingin menawarkan jasa les privatnya
+        sebagai pendapatan tambahan.
       </p>
     </div>
   </section>
