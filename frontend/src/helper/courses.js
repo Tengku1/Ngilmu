@@ -26,7 +26,7 @@ const CourseApiHelper = {
     }
   },
   getCoursesByTeacherId: async function (teacherId) {
-    const response = await axios.post(
+    const response = await axios.get(
       `${endpoint}/api/teacher/${teacherId}/courses`
     );
     return response.data;
