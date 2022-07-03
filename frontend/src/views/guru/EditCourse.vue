@@ -58,7 +58,7 @@
                   </div>
                 </div>
                 <div class="card-footer text-right">
-                  <button @click="editcourse" class="btn btn-primary">
+                  <button @click="editCourse" class="btn btn-primary">
                     Simpan
                   </button>
                 </div>
@@ -76,6 +76,7 @@
 import Navbar from '@/components/guru/Navbar.vue';
 import Sidebar from '@/components/guru/Sidebar.vue';
 import CourseApiHelper from '../../helper/courses';
+import router from '../../router/index';
 
 export default {
   props: ['teacherId', 'id'],
@@ -105,8 +106,11 @@ export default {
           this.description,
           this.price
         );
+        console.log(response);
+
         if (response.status === 200) {
           alert('Data course berhasil diubah');
+          router.push(`/guru/${this.teacherId}/course`);
         }
       } catch (error) {
         alert(error.message);
@@ -115,7 +119,6 @@ export default {
   },
   async created() {
     const response = await CourseApiHelper.getCourseById(this.id);
-    console.log(response);
     if (response) {
       this.course = response;
       this.name = this.course.name;
