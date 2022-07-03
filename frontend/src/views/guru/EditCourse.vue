@@ -90,12 +90,18 @@
 // @ is an alias to /src
 import Navbar from '@/components/guru/Navbar.vue';
 import Sidebar from '@/components/guru/Sidebar.vue';
+import CourseApiHelper from '../../helper/courses';
 
 export default {
   name: 'EditCourseGuru',
+  data() {
+    return {};
+  },
   components: {
     Navbar,
     Sidebar,
   },
+  methods: {},
+  async created() {},
 };
 </script>

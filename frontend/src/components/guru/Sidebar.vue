@@ -15,7 +15,7 @@
         <li>
           <a class="nav-link"
             ><i class="fa fa-home"></i
-            ><router-link class="nav-link" to="/guru/dashboard"
+            ><router-link class="nav-link" :to="`/guru/${teacherId}/dashboard`"
               >Dashboard</router-link
             ></a
           >
@@ -23,7 +23,7 @@
         <li>
           <a class="nav-link" href="blank.html"
             ><i class="fa fa-book"></i
-            ><router-link class="nav-link" to="/guru/course"
+            ><router-link class="nav-link" :to="`/guru/${teacherId}/course`"
               >Course</router-link
             ></a
           >
@@ -36,8 +36,8 @@
 <script>
 export default {
   name: 'Sidebar',
+  props: ['teacherId'],
 };
 </script>
 
-<style>
-</style>
+<style></style>

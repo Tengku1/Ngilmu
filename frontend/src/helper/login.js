@@ -9,14 +9,15 @@ async function login(email, password) {
       password,
     });
     if (response['status'] === 200) {
-      if (response['user'].roles === 'Guru') {
-        router.push('/guru/dashboard');
+      if (response['data']['user'].roles === 'Guru') {
+        router.push(`guru/${response['data']['user'].id}/dashboard`);
+        return response['data']['user'].id;
       } else {
         router.push('/murid/ambilcourse');
       }
     }
   } catch (error) {
-    alert('Password anda salah, mohon coba kembali');
+    alert(error.message);
   }
 }
 

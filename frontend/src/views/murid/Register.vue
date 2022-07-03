@@ -4,16 +4,7 @@
       <div class="container mt-5">
         <div class="row">
           <div
-            class="
-              col-12 col-sm-10
-              offset-sm-1
-              col-md-8
-              offset-md-2
-              col-lg-8
-              offset-lg-2
-              col-xl-8
-              offset-xl-2
-            "
+            class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2"
           >
             <div class="login-brand">
               <img
@@ -28,11 +19,12 @@
               <div class="card-header"><h4>Daftar Sebagai Murid</h4></div>
 
               <div class="card-body">
-                <form method="POST">
+                <form @submit.prevent="register">
                   <div class="form-group">
                     <label for="name">Nama Lengkap</label>
                     <input
                       id="name"
+                      v-model="fullName"
                       type="text"
                       class="form-control"
                       name="name"
@@ -44,6 +36,7 @@
                     <label for="email">Email</label>
                     <input
                       id="email"
+                      v-model="email"
                       type="email"
                       class="form-control"
                       name="email"
@@ -55,6 +48,7 @@
                     <label for="nomer">Nomer Whatsapp</label>
                     <input
                       id="nomer"
+                      v-model="phoneNumber"
                       type="number"
                       class="form-control"
                       name="nomer"
@@ -66,6 +60,7 @@
                     <label for="password" class="d-block">Password</label>
                     <input
                       id="password"
+                      v-model="password"
                       type="password"
                       class="form-control pwstrength"
                       data-indicator="pwindicator"
@@ -97,10 +92,41 @@
 </template>
 
 <script>
+import register from '../../helper/register';
+import router from '../../router/index';
 export default {
-  name: "RegisterMurid",
+  name: 'RegisterMurid',
+  data() {
+    return {
+      fullName: '',
+      email: '',
+      password: '',
+      phoneNumber: '',
+      roles: 'Murid',
+    };
+  },
+  methods: {
+    async register() {
+      const password = this.password.toString();
+      const phone = this.phoneNumber.toString();
+      try {
+        const response = await register(
+          this.email,
+          this.fullName,
+          phone,
+          password,
+          this.roles
+        );
+        if (response) {
+          router.push('/murid/login');
+        }
+      } catch (error) {
+        alert('Telah terjadi kesalahan..');
+        console.log(error.message);
+      }
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>
