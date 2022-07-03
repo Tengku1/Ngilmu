@@ -93,6 +93,7 @@ import Sidebar from '@/components/guru/Sidebar.vue';
 import CourseApiHelper from '../../helper/courses';
 
 export default {
+  props: ['teacherId', 'id'],
   name: 'EditCourseGuru',
   data() {
     return {};
@@ -102,6 +103,5 @@ export default {
     Sidebar,
   },
   methods: {},
-  async created() {},
 };
 </script>
